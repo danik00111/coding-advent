@@ -115,10 +115,7 @@ formatting.forEach(g=>{g.forEach(r=>{
   });
 })});
 
-let input = ormatting.map(x=>x.map(y=>y.map(z=>parseInt(z))));
-
-// PART 1
-
+let input = formatting.map(x=>x.map(y=>y.map(z=>parseInt(z))));
 let accum = 0;
 let possible;
 
