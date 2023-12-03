@@ -100,12 +100,8 @@ let realInput = `\
 \ \ Game 99: 7 blue, 13 green; 3 green, 5 red, 12 blue; 2 blue, 14 green, 8 red; 4 red, 6 blue, 2 green; 5 red, 9 green, 13 blue; 8 red, 8 blue, 5 green
 \ \ Game 100: 8 green, 7 blue, 1 red; 10 blue, 2 green, 5 red; 12 blue, 1 green, 1 red; 9 green, 9 blue, 2 red; 1 blue, 5 red, 3 green\
 `;
-// testcase (the code works perfectly fine on it):
-// let realInput = `Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
-// Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
-// Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
-// Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-// Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`
+
+// FORMATTING THE INPUT:
 
 let formatting = realInput.split('\n').map(x=>x.substring(x.indexOf(":")+2)).map(x=>x.split('; ')).map(x=>x.map(y=>y.split(', ')));
 
@@ -118,9 +114,11 @@ formatting.forEach(g=>{g.forEach(r=>{
     return lookup[a.substring(a.length-1)]-lookup[b.substring(b.length-1)];
   });
 })});
-formatting = formatting.map(x=>x.map(y=>y.map(z=>parseInt(z))));
 
-let input = formatting;
+let input = ormatting.map(x=>x.map(y=>y.map(z=>parseInt(z))));
+
+// PART 1
+
 let accum = 0;
 let possible;
 
@@ -130,3 +128,6 @@ for(i=0;i<input.length;i++) {
   if(possible){accum+=(i+1)};
 }
 console.log(accum);
+
+// PART 2
+
