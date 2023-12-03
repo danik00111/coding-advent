@@ -127,7 +127,6 @@ let possible;
 for(i=0;i<input.length;i++) {
   possible = true;
   input[i].forEach(x=>{if((x[0]>12)||(x[1]>13)||(x[2]>14))possible=false});
-  console.log(possible);
   if(possible){accum+=(i+1)};
 }
 console.log(accum);
