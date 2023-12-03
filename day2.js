@@ -107,10 +107,7 @@ let realInput = `\
 // Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
 // Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`
 
-let formatting = realInput.split('\n')
-.map(x=>x.substring(x.indexOf(":")+2))
-.map(x=>x.split('; '))
-.map(x=>x.map(y=>y.split(', ')));
+let formatting = realInput.split('\n').map(x=>x.substring(x.indexOf(":")+2)).map(x=>x.split('; ')).map(x=>x.map(y=>y.split(', ')));
 
 formatting.forEach(g=>{g.forEach(r=>{
   if(r.length<3){['0 red','0 green','0 blue'].forEach(x=>{
@@ -130,6 +127,7 @@ let possible;
 for(i=0;i<input.length;i++) {
   possible = true;
   input[i].forEach(x=>{if((x[0]>12)||(x[1]>13)||(x[2]>13))possible=false});
+  console.log(possible);
   if(possible){accum+=(i+1)};
-  console.log(accum);
 }
+console.log(accum);
