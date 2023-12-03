@@ -1,5 +1,5 @@
-let codes = `76xkqjzqtwonfour\nsixthree8sixjxjqsjgjgp\n38bg...
-...gzzfoneqn\neightgndhmrfouronexldvdvqnzxqjczfk1`
+import codes from './day1-input.js';
+let answer = codes
 .replaceAll('zerone','01') // only used in part 2
 .replaceAll('oneight','18') // only used in part 2
 .replaceAll('twone','21') // only used in part 2
@@ -26,4 +26,4 @@ let codes = `76xkqjzqtwonfour\nsixthree8sixjxjqsjgjgp\n38bg...
 .map(x=>(x.charAt(0)+x.substring((x.length)-1)))
 .map(x=>parseInt(x))
 .reduce((a,v)=>(a+v),0);
-console.log(codes);
+console.log(answer);
