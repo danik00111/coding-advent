@@ -1,6 +1,5 @@
 import codes from './day1-input.js';
 let answer = codes
-.replaceAll('zerone','01') // only used in part 2
 .replaceAll('oneight','18') // only used in part 2
 .replaceAll('twone','21') // only used in part 2
 .replaceAll('twone','21') // only used in part 2
@@ -11,7 +10,6 @@ let answer = codes
 .replaceAll('eightwo','82') // only used in part 2
 .replaceAll('eighthree','83') // only used in part 2
 .replaceAll('nineight','98') // only used in part 2
-.replaceAll('zero','0')
 .replaceAll('one','1')
 .replaceAll('two','2')
 .replaceAll('three','3')
