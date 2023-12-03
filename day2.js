@@ -1,4 +1,4 @@
-import realInput from './day2-input.js';
+import realInput from './input2.js';
 
 // FORMATTING THE INPUT:
 

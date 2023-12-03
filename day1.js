@@ -1,4 +1,4 @@
-import codes from './day1-input.js';
+import codes from './input1.js';
 let answer = codes
 .replaceAll('oneight','18') // only used in part 2
 .replaceAll('twone','21') // only used in part 2
