@@ -18,7 +18,7 @@ let input = formatting.map(x=>x.map(y=>y.map(z=>parseInt(z))));
 let accum = 0;
 let possible;
 
-for(i=0;i<input.length;i++) {
+for(let i=0;i<input.length;i++) {
   possible = true;
   input[i].forEach(x=>{if((x[0]>12)||(x[1]>13)||(x[2]>14))possible=false});
   if(possible){accum+=(i+1)};
@@ -26,3 +26,11 @@ for(i=0;i<input.length;i++) {
 console.log(accum);
 
 // PART 2
+
+const transpose=(matrix)=>matrix[0].map((_,i)=>matrix.map(r=>r[i])); // [[1,2,3],[4,5,6]] <=> [[1,4],[2,5],[3,6]]
+input=input
+.map(x=>transpose(x)) // inside-out-ify all "game" arrays,
+.map(x=>x.map(y=>Math.max(...y))) // take the max value from "r/g/b" arrays (former round arrays),
+.map(x=>x.reduce((a,v)=>a*v,1)) // multiply in all "game-maxes" arrays,
+.reduce((a,v)=>a+v,0); // and add all numbers
+console.log(input);
